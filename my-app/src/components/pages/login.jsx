@@ -83,7 +83,7 @@ export default class login extends Component {
                             </div>
                         </div>
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block" onClick={this.state.handleLogin.bind(this)}>Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block" onClick={this.handleLogin.bind(this)}>Sign In</button>
                         </div>
                         </div>
                     </form>
@@ -99,7 +99,7 @@ export default class login extends Component {
         )
         }
         else {
-            <Redirect to="/admindashboard" />
+            return <Redirect to="/admindashboard" />
         }
     }
 }
