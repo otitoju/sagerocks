@@ -75,7 +75,8 @@ export default class newpost extends Component {
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Content</label>
-                                <textarea id="inputDescription" class="form-control" rows="4" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
+                                <textarea id="inputDescription" class="textarea" rows="8" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
+                                {/* <textarea id="inputDescription" class="form-control" rows="4" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea> */}
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Image</label>
