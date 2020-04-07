@@ -7,4 +7,4 @@ const ApplicantSchema = new mongoose.Schema({
     approved: { type: Boolean, default: false }
 })
 
-module.exports = mongoose.model('posts', PostSchema)
+module.exports = mongoose.model('applicants', ApplicantSchema)

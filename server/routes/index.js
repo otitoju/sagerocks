@@ -34,11 +34,11 @@ const upload = multer({
 })
 
 //Documents cloudinary and multer setup
-const storage = multer.diskStorage({
-    filename: function(req, file, cb){
-        cb(null, Date.now()+file.originalname)
-    }
-})
+// const storage = multer.diskStorage({
+//     filename: function(req, file, cb){
+//         cb(null, Date.now()+file.originalname)
+//     }
+// })
 const docFilter = function(req, file, cb){
     if(!file.originalname.match(/\.(docx|doc|msword|rtf|zip|rar|pdf|txt)$/i)){
         return cb('Only zip, pdf, doc and docx files are allowed', false)
