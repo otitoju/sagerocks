@@ -10,7 +10,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5006
 //mongodb://otitoju:emini1@ds055584.mlab.com:55584/sagerocks'
 //|| 'mongodb://localhost:27017/sagerocks'
-mongoose.connect('mongodb://localhost:27017/sagerocks' , {
+mongoose.connect('mongodb://otitoju:emini1@ds055584.mlab.com:55584/sagerocks' , {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
