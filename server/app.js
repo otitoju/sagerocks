@@ -26,7 +26,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => {
-    console.log(`Application started on port ${port}`)
+    console.log(`Application started on port ${PORT}`)
 })
 //commands
 // heroku login
