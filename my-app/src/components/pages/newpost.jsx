@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Index from './index'
 export default class newpost extends Component {
     constructor() {
         super()
@@ -11,7 +11,7 @@ export default class newpost extends Component {
 
     async handlePost(e) {
         e.preventDefault()
-        fetch('http://localhost:5000/newpost', {
+        fetch('/api/v1/newpost', {
             method: "POST",
             headers: {
                 "Accept": 'application/json',
@@ -19,7 +19,7 @@ export default class newpost extends Component {
             },
             body: JSON.stringify({
                 title: this.state.title,
-                content: this.state.content
+                content: document.getElementById('inputDescription').value
             })
         })
         .then( res => res.json())
@@ -39,6 +39,7 @@ export default class newpost extends Component {
     render() {
         return (
             <div>
+                <Index />
                 <div class="content-wrapper">
                     <section class="content-header">
                     <div class="container-fluid">
@@ -75,7 +76,7 @@ export default class newpost extends Component {
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Content</label>
-                                <textarea id="inputDescription" class="textarea" rows="8" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
+                                <textarea id="inputDescription" class="textarea form-control" rows="8" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
                                 {/* <textarea id="inputDescription" class="form-control" rows="4" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea> */}
                             </div>
                             <div class="form-group">

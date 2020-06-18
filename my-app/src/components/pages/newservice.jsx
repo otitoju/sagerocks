@@ -11,7 +11,7 @@ export default class newservice extends Component {
 
     async handleService(e) {
         e.preventDefault()
-        fetch('http://localhost:5000/newservice', {
+        fetch('/api/v1/newservice', {
             method: "POST",
             headers: {
                 "Accept": 'application/json',
@@ -19,7 +19,7 @@ export default class newservice extends Component {
             },
             body: JSON.stringify({
                 title: this.state.title,
-                content: this.state.content
+                content: document.getElementById('inputDescription').value
             })
         })
         .then( res => res.json())
@@ -74,7 +74,7 @@ export default class newservice extends Component {
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Content</label>
-                                <textarea id="inputDescription" class="form-control" rows="4" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
+                                <textarea id="inputDescription" class="textarea form-control" rows="8" value={this.state.content} onChange={this.handleContent.bind(this)}></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Image</label>
@@ -87,7 +87,7 @@ export default class newservice extends Component {
                     </div>
                     <div class="row">
                         <div class="col-12">
-                        <input type="submit" value="Create new Services" class="btn btn-success float-left" onClick={this.handlePost.bind(this)}/>
+                        <input type="submit" value="Create new Services" class="btn btn-success float-left" onClick={this.handleService.bind(this)}/>
                         </div>
                     </div>
                     </section>

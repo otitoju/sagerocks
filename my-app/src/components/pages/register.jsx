@@ -13,7 +13,7 @@ export default class register extends Component {
 
     async handleRegister(e) {
         e.preventDefault()
-        fetch('http://localhost:5000/register', {
+        fetch('/api/v1/register', {
             method: "POST",
             headers: {
                 "Accept": 'application/json',
@@ -39,7 +39,7 @@ export default class register extends Component {
         this.setState({ password: e.target.value })
     }
     handleName(e) {
-        this.setState({ name: e.target.valuee })
+        this.setState({ name: e.target.value })
     }
     render() {
         return (

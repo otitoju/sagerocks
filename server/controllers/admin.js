@@ -73,7 +73,8 @@ class AdminController {
                     return res.status(200).json({
                         message: 'login was successful',
                         token: user[0],
-                        id: user[1]
+                        id: user[1],
+                        name: user[2]
 
                     })
                 }

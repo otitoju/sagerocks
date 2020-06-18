@@ -27,7 +27,8 @@ class AdminService {
                         email: user.email
                     }, process.env.ADMINSECRET)
                     const id = user._id
-                    const combined = [token, id]
+                    const name = user.name
+                    const combined = [token, id, name]
                     return combined
                 }
             }

@@ -14,7 +14,7 @@ export default class login extends Component {
 
     async handleLogin(e) {
         e.preventDefault()
-        fetch('http://localhost:5000/login', {
+        fetch('/api/v1/login', {
             method: "POST",
             headers: {
                 "Accept": 'application/json',
@@ -28,8 +28,12 @@ export default class login extends Component {
         .then( res => res.json())
         .then( res => {
             console.log(res)
-            if(res.message == 'successful'){
+            if(res.message == 'login was successful'){
                 this.setState({ redirect: true })
+                window.localStorage.setItem('token', res.token)
+                window.localStorage.setItem('name', res.name)
+                window.localStorage.setItem('ID', res.id)
+
             }
             else{
                 alert(res.message)
