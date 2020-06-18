@@ -7,7 +7,7 @@ const routes = require('./routes/index')
 const cors = require('cors') 
 const PORT = process.env.PORT || 5000
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sagerocks', {
+mongoose.connect('mongodb://sellyourmarket:sellyourmarket1@ds263928.mlab.com:63928/sellyourmarket' || 'mongodb://localhost:27017/sagerocks', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
